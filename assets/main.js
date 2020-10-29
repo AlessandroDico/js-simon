@@ -11,13 +11,15 @@ $(document).ready(function(){
 
     var fiveNumbers = [];
 
-    var timeInSeconds = 5;
+    var timeInSeconds = 30;
 
     var time = timeInSeconds * 1000;
 
     var timeForPrompt = (timeInSeconds * 1000) + 1000;
 
     var userNumbers = [];
+
+    var rigthNumbers = 0;
 
 
     while (fiveNumbers.length < 5) {
@@ -58,6 +60,9 @@ $(document).ready(function(){
                 if (!userNumbers.includes(userReply)) {
                     userNumbers.push(userReply);
                     console.log(userNumbers);
+                    if (fiveNumbers.includes(userReply)) {
+                        rigthNumbers++;
+                    }
 
                 } else {
                     alert('numero già inserito')
@@ -67,6 +72,8 @@ $(document).ready(function(){
             }
         }
 
+    console.log(' Hai indovinato ' + rigthNumbers + ' numeri');
+    document.writeln(' Hai indovinato ' + rigthNumbers + ' numeri');
     }, timeForPrompt);
 
     console.log(userNumbers);
