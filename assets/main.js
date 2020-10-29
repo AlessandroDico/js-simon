@@ -11,9 +11,11 @@ $(document).ready(function(){
 
     var fiveNumbers = [];
 
-    var timeInSeconds = 10;
+    var timeInSeconds = 5;
 
     var time = timeInSeconds * 1000;
+
+    var timeForPrompt = (timeInSeconds * 1000) + 1000;
 
 
     while (fiveNumbers.length < 5) {
@@ -23,8 +25,7 @@ $(document).ready(function(){
         }
         console.log(fiveNumbers);
     }
-    // document.writeln(fiveNumbers);
-    // $('#numbers').html(fiveNumbers);
+
     $('#numbers').html('' + fiveNumbers + '');
 
 
@@ -34,11 +35,22 @@ $(document).ready(function(){
         setTimeout
     };
 
+// nascondo numeri dopo il tempo stabilito aggiungendo una classe con display none
 
     var hideNumbers = setTimeout(function(){
         // mettere una classe che nasconde il fiveNumbers
         $('#numbers').addClass('hide');
+
     }, time);
+
+
+// quando hideNumbers è finito deve uscire un propt che chiede i numeri all'utente
+// faccio visualizzare il propt un secondo dopo che i numeri sono scomparsi cosi da non rischiare di 'bloccarli' in pagina con il prompt
+
+    var showPrompt = setTimeout(function(){
+        var userNumber = parseInt(prompt('inserici un numero di tra quelli che hai visto'));
+    }, timeForPrompt);
+
 
 
 /* CREATO COUNTDOWN
