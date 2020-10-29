@@ -15,7 +15,7 @@ $(document).ready(function(){
 
     var time = timeInSeconds * 1000;
 
-    var timeForPrompt = (timeInSeconds * 1000) + 2000;
+    var timeForPrompt = time + 3000;
 
     var userNumbers = [];
 
@@ -39,7 +39,7 @@ $(document).ready(function(){
         // mettere una classe che nasconde il fiveNumbers
         $('#numbers').addClass('hide');
 
-    }, time);
+    }, time + 2500); // aggiunto + 1500 per farlo combaciare con il countdown
 
 
 // quando hideNumbers è finito deve uscire un propt che chiede i numeri all'utente
@@ -87,6 +87,7 @@ $(document).ready(function(){
     } else {
         clearInterval(countDown);
         console.log('finish');
+        $('#show-countdown').text('Stop');
     }
 
 }, 1000);
