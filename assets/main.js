@@ -17,6 +17,8 @@ $(document).ready(function(){
 
     var timeForPrompt = (timeInSeconds * 1000) + 1000;
 
+    var userNumbers = [];
+
 
     while (fiveNumbers.length < 5) {
         var cpuNumbers = randomNumber(1, 100);
@@ -26,7 +28,7 @@ $(document).ready(function(){
         console.log(fiveNumbers);
     }
 
-    $('#numbers').html('' + fiveNumbers + '');
+    $('#numbers').html(fiveNumbers.join(' - '));
 
 
     setTimeout(scadenza, 30000);
@@ -48,9 +50,26 @@ $(document).ready(function(){
 // faccio visualizzare il propt un secondo dopo che i numeri sono scomparsi cosi da non rischiare di 'bloccarli' in pagina con il prompt
 
     var showPrompt = setTimeout(function(){
-        var userNumber = parseInt(prompt('inserici un numero di tra quelli che hai visto'));
+
+        while (userNumbers.length < 5) {
+
+            var userReply = parseInt(prompt('inserici un numero di tra quelli che hai visto'));
+            if (!isNaN(userReply)) {
+                if (!userNumbers.includes(userReply)) {
+                    userNumbers.push(userReply);
+                    console.log(userNumbers);
+
+                } else {
+                    alert('numero già inserito')
+                }
+            } else {
+                alert('elemento non valido')
+            }
+        }
+
     }, timeForPrompt);
 
+    console.log(userNumbers);
 
 
 /* CREATO COUNTDOWN
