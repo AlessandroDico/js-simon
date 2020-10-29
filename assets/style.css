@@ -4,6 +4,6 @@
 }
 
 #numbers.hide {
-    display: none;
+    visibility: hidden;
 
 }
