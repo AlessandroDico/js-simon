@@ -11,6 +11,10 @@ $(document).ready(function(){
 
     var fiveNumbers = [];
 
+    var timeInSeconds = 10;
+
+    var time = timeInSeconds * 1000;
+
 
     while (fiveNumbers.length < 5) {
         var cpuNumbers = randomNumber(1, 100);
@@ -21,7 +25,50 @@ $(document).ready(function(){
     }
     document.writeln(fiveNumbers);
 
+    setTimeout(scadenza, 30000);
 
+    function scadenza(){
+        setTimeout
+    };
+
+
+
+    var countDown = setInterval(function(){
+
+
+    if (timeInSeconds >= 0) {
+        console.log(timeInSeconds);
+        timeInSeconds--;
+    } else {
+        clearInterval(countDown);
+        console.log('finish');
+    }
+
+    }, 1000);
+
+
+
+
+
+/*
+
+
+    var timeReverse = setInterval(countDown, time)
+    // console.log(timeReverse);
+
+    function countDown(){
+
+        setInterval(function(){
+            // console.log(timeInSeconds);
+
+            while (timeInSeconds > 0) {
+                console.log(timeInSeconds);
+                timeInSeconds--;
+            }
+
+        }, 1000);
+    };
+*/
 
     function randomNumber(min, max) {
         var randomItem;
