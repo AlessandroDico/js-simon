@@ -1,0 +1,9 @@
+#numbers {
+    height: 100px;
+
+}
+
+#numbers.hide {
+    display: none;
+
+}

@@ -23,7 +23,10 @@ $(document).ready(function(){
         }
         console.log(fiveNumbers);
     }
-    document.writeln(fiveNumbers);
+    // document.writeln(fiveNumbers);
+    // $('#numbers').html(fiveNumbers);
+    $('#numbers').html('' + fiveNumbers + '');
+
 
     setTimeout(scadenza, 30000);
 
@@ -32,6 +35,13 @@ $(document).ready(function(){
     };
 
 
+    var hideNumbers = setTimeout(function(){
+        // mettere una classe che nasconde il fiveNumbers
+        $('#numbers').addClass('hide');
+    }, time);
+
+
+/* CREATO COUNTDOWN
 
     var countDown = setInterval(function(){
 
@@ -44,31 +54,11 @@ $(document).ready(function(){
         console.log('finish');
     }
 
-    }, 1000);
-
-
-
-
-
-/*
-
-
-    var timeReverse = setInterval(countDown, time)
-    // console.log(timeReverse);
-
-    function countDown(){
-
-        setInterval(function(){
-            // console.log(timeInSeconds);
-
-            while (timeInSeconds > 0) {
-                console.log(timeInSeconds);
-                timeInSeconds--;
-            }
-
-        }, 1000);
-    };
+}, 1000);
 */
+
+
+
 
     function randomNumber(min, max) {
         var randomItem;
