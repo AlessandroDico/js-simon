@@ -15,7 +15,7 @@ $(document).ready(function(){
 
     var time = timeInSeconds * 1000;
 
-    var timeForPrompt = (timeInSeconds * 1000) + 1000;
+    var timeForPrompt = (timeInSeconds * 1000) + 2000;
 
     var userNumbers = [];
 
@@ -32,12 +32,6 @@ $(document).ready(function(){
 
     $('#numbers').html(fiveNumbers.join(' - '));
 
-
-    setTimeout(scadenza, 30000);
-
-    function scadenza(){
-        setTimeout
-    };
 
 // nascondo numeri dopo il tempo stabilito aggiungendo una classe con display none
 
@@ -87,6 +81,8 @@ $(document).ready(function(){
     if (timeInSeconds >= 0) {
         console.log(timeInSeconds);
         // document.writeln(timeInSeconds);
+        $('#show-countdown').html(timeInSeconds);
+        // document.getElementById('show-countdown').innerHTML = timeInSeconds;
         timeInSeconds--;
     } else {
         clearInterval(countDown);
