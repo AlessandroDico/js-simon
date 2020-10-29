@@ -11,7 +11,9 @@ $(document).ready(function(){
 
     var fiveNumbers = [];
 
-    var timeInSeconds = 10;
+    var timeInSeconds = 30;
+
+    var oneSecond = 1000;
 
     var time = timeInSeconds * 1000;
 
@@ -27,7 +29,7 @@ $(document).ready(function(){
         if (!fiveNumbers.includes(cpuNumbers)) {
             fiveNumbers.push(cpuNumbers);
         }
-        console.log(fiveNumbers);
+        // console.log(fiveNumbers);
     }
 
     $('#numbers').html(fiveNumbers.join(' - '));
@@ -53,7 +55,7 @@ $(document).ready(function(){
             if (!isNaN(userReply)) {
                 if (!userNumbers.includes(userReply)) {
                     userNumbers.push(userReply);
-                    console.log(userNumbers);
+                    // console.log(userNumbers);
                     if (fiveNumbers.includes(userReply)) {
                         rigthNumbers++;
                     }
@@ -66,11 +68,11 @@ $(document).ready(function(){
             }
         }
 
-    console.log(' Numeri indovinati : ' + rigthNumbers);
+    // console.log(' Numeri indovinati : ' + rigthNumbers);
     document.writeln(' Numeri indovinati : ' + rigthNumbers);
     }, timeForPrompt);
 
-    console.log(userNumbers);
+
 
 
 //CREATO COUNTDOWN
@@ -79,18 +81,18 @@ $(document).ready(function(){
 
 
     if (timeInSeconds >= 0) {
-        console.log(timeInSeconds);
+        // console.log(timeInSeconds);
         // document.writeln(timeInSeconds);
         $('#show-countdown').html(timeInSeconds);
         // document.getElementById('show-countdown').innerHTML = timeInSeconds;
         timeInSeconds--;
     } else {
         clearInterval(countDown);
-        console.log('finish');
+        // console.log('finish');
         $('#show-countdown').text('Stop');
     }
 
-}, 1000);
+}, oneSecond);
 
 
 
