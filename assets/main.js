@@ -11,7 +11,7 @@ $(document).ready(function(){
 
     var fiveNumbers = [];
 
-    var timeInSeconds = 30;
+    var timeInSeconds = 10;
 
     var time = timeInSeconds * 1000;
 
@@ -72,20 +72,21 @@ $(document).ready(function(){
             }
         }
 
-    console.log(' Hai indovinato ' + rigthNumbers + ' numeri');
-    document.writeln(' Hai indovinato ' + rigthNumbers + ' numeri');
+    console.log(' Numeri indovinati : ' + rigthNumbers);
+    document.writeln(' Numeri indovinati : ' + rigthNumbers);
     }, timeForPrompt);
 
     console.log(userNumbers);
 
 
-/* CREATO COUNTDOWN
+//CREATO COUNTDOWN
 
     var countDown = setInterval(function(){
 
 
     if (timeInSeconds >= 0) {
         console.log(timeInSeconds);
+        // document.writeln(timeInSeconds);
         timeInSeconds--;
     } else {
         clearInterval(countDown);
@@ -93,7 +94,7 @@ $(document).ready(function(){
     }
 
 }, 1000);
-*/
+
 
 
 
